@@ -1,0 +1,32 @@
+1.举例:button获取真实点击的element
+
+     mSinger.addClickHandler(new ClickHandler() {
+            
+            @Override
+            public void onClick(ClickEvent event) {
+                Element e=event.getNativeEvent().getEventTarget().cast();
+                System.out.println(e);//真实element
+//                if (mSingerCallback != null) {
+//                    if (mSonginfo.getSinger() == null || mSonginfo.getSinger().equals("") || mSonginfo.getSinger().equals(" ")) {
+//                        return;
+//                    }
+//                    mSingerCallback.callback(ClickType.SINGLE_SINGER, mSonginfo.getSinger());
+//                }
+            }
+        });
+
+https://www.vectomatic.org/libs/lib-gwt-svg/getting-started
+
+2.一个控件捕捉所有鼠标事件
+Dom.setCapture(element) with mouse-over/out on
+other elements
+
+
+
+3.如果使用appendChild方式加入label等gwt元素,那么该gwt等元素无法响应事件!但是svg元素事件可以正常响应.
+
+
+4.突破性认识;gwt里面的touch事件是专门为手持设备准备的,也就是说pc浏览器不会响应该事件但是手持设备响应
+
+
+5.grid 突破性认识:cell 里面设置的变量是grid的所有cell公用的：而非想象中的每个cell对应一个cell渲染结构--具体见图片预览左右切换时
